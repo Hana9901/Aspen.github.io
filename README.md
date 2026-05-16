@@ -1,6 +1,8 @@
-# Aspen_personal_web
+# Aspen · personal site
 
-Product-manager portfolio frontend: Vite + React + TypeScript, editorial Stitch-inspired UI, CRT intro, GSAP target cursor.
+Product-manager portfolio (Vite + React + TypeScript): editorial Stitch-style UI, CRT intro, GSAP target cursor.
+
+**源码与 GitHub Pages 发布：** [`hana9901/aspen.github.io`](https://github.com/Hana9901/aspen.github.io)
 
 ## Scripts
 
@@ -29,7 +31,7 @@ This project is set up as a **[project site](https://docs.github.com/en/pages/ge
 
 ### Repo settings
 
-1. **`main`** 已推送到 [`Hana9901/Aspen.github.io`](https://github.com/Hana9901/Aspen.github.io)。
+1. **`main`** 推送到 [`hana9901/aspen.github.io`](https://github.com/Hana9901/aspen.github.io)。
 2. **Settings → Pages** → **Deploy from a branch**。
 3. Branch **`main`**，folder **`/docs`**（官方文档：[Publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)）。
 4. 保存后等待 1～3 分钟；仍为 404 时查看该页是否有 **构建失败**，或 **`docs`** 是否在默认分支上有 **`index.html`**。
