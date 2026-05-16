@@ -15,24 +15,29 @@ npm run preview
 
 ## GitHub Pages (`Aspen.github.io` repo)
 
-This project is set up as a **[project site](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)** (repo name `Aspen.github.io`). The live URL is:
+This project is set up as a **[project site](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)**.
 
-**`https://hana9901.github.io/Aspen.github.io/`**  
-(GitHub may normalize casing in the path; use the URL shown under **Settings → Pages**.)
+### Correct URL（常见 404 原因）
+
+仓库名里有 `github.io` **不等于** 网站在 `https://Aspen.github.io`。对账户 **`hana9901`** 而言，这个仓库的 Page 一般是：
+
+**`https://hana9901.github.io/aspen.github.io/`**
+
+（路径多为**小写**；请以 **Settings → Pages** 里的 **Visit site** 为准。）
+
+只有仓库名**严格等于 `你的用户名.github.io`** 且从仓库**根目录**发布时，主页才会是 **`https://hana9901.github.io/`**。
 
 ### Repo settings
 
-1. Push the **`main`** branch to [`Hana9901/Aspen.github.io`](https://github.com/Hana9901/Aspen.github.io).
-2. In the repo on GitHub: **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-4. Choose **`main`** and folder **`/docs`** (see [configuring a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)).
-5. After the first deployment, Pages shows the canonical site URL.
+1. **`main`** 已推送到 [`Hana9901/Aspen.github.io`](https://github.com/Hana9901/Aspen.github.io)。
+2. **Settings → Pages** → **Deploy from a branch**。
+3. Branch **`main`**，folder **`/docs`**（官方文档：[Publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)）。
+4. 保存后等待 1～3 分钟；仍为 404 时查看该页是否有 **构建失败**，或 **`docs`** 是否在默认分支上有 **`index.html`**。
 
 ### Build output
 
-- `npm run build:pages` runs `vite` with **`base: /Aspen.github.io/`**, writes **`docs/`**, duplicates **`docs/index.html` → `docs/404.html`** so client-side routes work on refresh, and adds **`docs/.nojekyll`** so Pages does not run Jekyll on static assets.
-
-If assets 404 after deploy, confirm the **`base`** in [`vite.config.ts`](vite.config.ts) matches your repository name/path exactly as GitHub resolves it.
+- `npm run build:pages` 使用 **`base: /aspen.github.io/`**，输出 **`docs/`**，并生成 **`404.html`**（SPA）与 **`.nojekyll`**。
+- 若 **`base`** 与 Settings 显示的访问路径不一致，会空白或资源 404；对齐后重新 `npm run build:pages` 并推送 **`docs`**。
 
 ## Stack
 
