@@ -1,0 +1,51 @@
+/* Target cursor overlay — used by target_curser.tsx (do not rename without updating that file) */
+.target-cursor-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10050;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.target-cursor-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  margin-top: -3px;
+  border-radius: 9999px;
+  background: #ff5f1f;
+  box-shadow: 0 0 12px rgba(255, 95, 31, 0.45);
+}
+
+.target-cursor-corner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  box-sizing: border-box;
+  border-color: #ff5f1f;
+  border-style: solid;
+}
+
+.target-cursor-corner.corner-tl {
+  border-width: 3px 0 0 3px;
+}
+
+.target-cursor-corner.corner-tr {
+  border-width: 3px 3px 0 0;
+}
+
+.target-cursor-corner.corner-br {
+  border-width: 0 3px 3px 0;
+}
+
+.target-cursor-corner.corner-bl {
+  border-width: 0 0 3px 3px;
+}

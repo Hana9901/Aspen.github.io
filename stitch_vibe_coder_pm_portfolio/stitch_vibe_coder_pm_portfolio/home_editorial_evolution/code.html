@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800;900&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#004b70",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#454747",
+            "surface-dim": "#131313",
+            "on-surface": "#e2e2e2",
+            "on-surface-variant": "#e3bfb3",
+            "tertiary": "#8dcdff",
+            "primary": "#ffb59c",
+            "inverse-surface": "#e2e2e2",
+            "on-tertiary": "#00344f",
+            "surface-container-low": "#1b1b1b",
+            "surface-container-high": "#2a2a2a",
+            "on-primary-fixed": "#390c00",
+            "secondary": "#c6c6c7",
+            "outline": "#aa897f",
+            "surface-container-highest": "#353535",
+            "on-secondary": "#2f3131",
+            "surface-container-lowest": "#0e0e0e",
+            "on-tertiary-fixed": "#001e30",
+            "tertiary-container": "#009de4",
+            "secondary-fixed": "#e2e2e2",
+            "background": "#131313",
+            "surface-bright": "#393939",
+            "outline-variant": "#5b4138",
+            "primary-fixed": "#ffdbcf",
+            "tertiary-fixed-dim": "#8dcdff",
+            "on-background": "#e2e2e2",
+            "on-secondary-fixed": "#1a1c1c",
+            "on-error": "#690005",
+            "primary-container": "#ff5f1f",
+            "surface": "#131313",
+            "on-primary-fixed-variant": "#832700",
+            "inverse-on-surface": "#303030",
+            "surface-tint": "#ffb59c",
+            "surface-variant": "#353535",
+            "tertiary-fixed": "#cae6ff",
+            "surface-container": "#1f1f1f",
+            "on-secondary-container": "#b4b5b5",
+            "on-tertiary-container": "#00304a",
+            "error-container": "#93000a",
+            "secondary-fixed-dim": "#c6c6c7",
+            "on-primary-container": "#561700",
+            "error": "#ffb4ab",
+            "inverse-primary": "#ab3600",
+            "on-primary": "#5c1900",
+            "secondary-container": "#454747",
+            "primary-fixed-dim": "#ffb59c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "panel-split": "50vw",
+            "margin": "48px",
+            "base": "4px"
+          },
+          "fontFamily": {
+            "display-xl": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "body-md": ["Inter"],
+            "stat-number": ["Hanken Grotesk"],
+            "label-xs": ["JetBrains Mono"],
+            "display-xl-mobile": ["Hanken Grotesk"],
+            "headline-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "display-xl": ["120px", { "lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+            "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "stat-number": ["64px", { "lineHeight": "64px", "fontWeight": "900" }],
+            "label-xs": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+            "display-xl-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .diagonal-hatch {
+      background-image: repeating-linear-gradient(45deg, #333333 0, #333333 1px, transparent 0, transparent 50%);
+      background-size: 10px 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #131313;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #333333;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container custom-scrollbar">
+<!-- TopNavBar (Shared Component) -->
+<nav class="flex justify-between items-center w-full px-margin py-4 fixed top-0 z-50 bg-background/80 backdrop-blur-sm dark:bg-background/80 border-b border-outline-variant">
+<div class="font-display-xl text-headline-sm font-black text-on-surface dark:text-on-surface">VIBE_PM_SYSTEMS</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">WORK</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">ARCHIVE</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">MANIFESTO</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">CONTACT</a>
+<button class="ml-4 px-6 py-2 bg-primary-container text-on-primary-container font-label-xs text-label-xs uppercase tracking-widest hover:bg-primary hover:text-on-primary-fixed duration-300 scale-95 transition-transform duration-150 ease-out">
+        HIRE(0)
+      </button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section (Editorial Split) -->
+<section class="min-h-screen flex flex-col md:flex-row relative overflow-hidden border-b border-outline-variant">
+<!-- Left Fixed Panel (Atmospheric Typo) -->
+<div class="w-full md:w-1/2 min-h-[512px] md:h-screen flex items-center justify-center bg-primary-container relative border-r border-outline-variant">
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none">
+<span class="font-display-xl text-[240px] md:text-[400px] leading-none text-on-primary-fixed-variant">VIBE</span>
+</div>
+<div class="z-10 text-on-primary-fixed p-margin text-center md:text-left">
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase">VIBE_CODER</h1>
+<p class="font-label-xs text-label-xs mt-4 tracking-[0.4em] uppercase opacity-80">Automating Excellence through Systems Thinking</p>
+</div>
+</div>
+<!-- Right Scrollable Panel -->
+<div class="w-full md:w-1/2 min-h-screen flex flex-col justify-end p-margin bg-gradient-to-b from-[#0a1a15] to-background">
+<div class="max-w-xl">
+<span class="inline-block bg-primary-container text-on-primary-container px-3 py-1 font-label-xs text-label-xs rounded-full mb-8">( 00 ) IDENTITY</span>
+<h2 class="font-headline-lg text-headline-lg mb-12">BUILDING PRODUCTS AT THE SPEED OF THOUGHT.</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-outline-variant pt-8">
+<div>
+<span class="font-label-xs text-label-xs text-primary block mb-2">/ PHILOSOPHY</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Systems that learn, adapt, and evolve. We don't just ship features; we engineer economic advantages.</p>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-primary block mb-2">/ TRAJECTORY</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Focusing on high-density data products and AI-orchestrated workflows for the next web.</p>
+</div>
+</div>
+</div>
+<!-- Fine-line geometry decorative element -->
+<div class="mt-24 self-end opacity-40">
+<div class="w-32 h-32 relative">
+<div class="absolute inset-0 border border-outline rounded-full"></div>
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline transform -rotate-45"></div>
+<div class="absolute top-0 left-1/2 h-full w-[1px] bg-outline transform rotate-45"></div>
+<div class="absolute top-1/4 left-1/4 w-1/2 h-1/2 border border-primary-container transform rotate-12"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Abilities (Strict Grid) -->
+<section class="border-b border-outline-variant bg-surface">
+<div class="flex flex-col md:flex-row border-b border-outline-variant">
+<div class="w-full md:w-1/4 p-margin border-r border-outline-variant flex flex-col justify-between">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-xs text-label-xs rounded-full w-fit">( 01 ) CORE_ABILITIES</span>
+<h3 class="font-headline-sm text-headline-sm mt-12 uppercase tracking-tighter">Strategic<br/>Engineered<br/>Outputs</h3>
+</div>
+<div class="w-full md:w-3/4 grid grid-cols-1 md:grid-cols-3">
+<!-- Ability 01 -->
+<div class="p-margin border-b md:border-b-0 md:border-r border-outline-variant group hover:bg-surface-container-high transition-colors">
+<span class="font-label-xs text-label-xs text-primary">01_SYSTEMS_DESIGN</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-12">Designing modular architectures that decouple complex product requirements into executable nodes.</p>
+<div class="diagonal-hatch w-full aspect-video border border-outline-variant relative">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 border border-primary-container rounded-sm rotate-45 group-hover:scale-125 transition-transform"></div>
+</div>
+</div>
+</div>
+<!-- Ability 02 -->
+<div class="p-margin border-b md:border-b-0 md:border-r border-outline-variant group hover:bg-surface-container-high transition-colors">
+<span class="font-label-xs text-label-xs text-primary">02_ALGORITHMIC_PM</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-12">Utilizing quantitative modeling to predict product-market fit before a single line of code is written.</p>
+<div class="diagonal-hatch w-full aspect-video border border-outline-variant relative">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-1 border-t border-primary-container group-hover:rotate-180 transition-transform duration-1000"></div>
+<div class="w-1 h-16 border-l border-primary-container group-hover:rotate-180 transition-transform duration-1000"></div>
+</div>
+</div>
+</div>
+<!-- Ability 03 -->
+<div class="p-margin group hover:bg-surface-container-high transition-colors">
+<span class="font-label-xs text-label-xs text-primary">03_VIBE_ORCHESTRATION</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-12">Aligning engineering speed with aesthetic precision to create high-frequency user experiences.</p>
+<div class="diagonal-hatch w-full aspect-video border border-outline-variant relative overflow-hidden">
+<div class="absolute -bottom-4 -right-4 w-24 h-24 border border-primary-container rounded-full opacity-50 group-hover:scale-150 transition-transform"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics Grid -->
+<section class="bg-surface-container-lowest border-b border-outline-variant">
+<div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-outline-variant">
+<div class="p-margin flex flex-col gap-4">
+<span class="font-label-xs text-label-xs text-primary uppercase">Products Launched</span>
+<span class="font-stat-number text-stat-number text-on-surface">14</span>
+<p class="font-label-xs text-[9px] text-on-surface-variant leading-tight">ENTERPRISE SCALE SYSTEMS DEPLOYED ACROSS GLOBAL NODES.</p>
+</div>
+<div class="p-margin flex flex-col gap-4">
+<span class="font-label-xs text-label-xs text-primary uppercase">Revenue Impact</span>
+<span class="font-stat-number text-stat-number text-on-surface">$2.4M</span>
+<p class="font-label-xs text-[9px] text-on-surface-variant leading-tight">INCREMENTAL GROWTH THROUGH ALGORITHMIC OPTIMIZATION.</p>
+</div>
+<div class="p-margin flex flex-col gap-4">
+<span class="font-label-xs text-label-xs text-primary uppercase">Vibe Score</span>
+<span class="font-stat-number text-stat-number text-on-surface">99%</span>
+<p class="font-label-xs text-[9px] text-on-surface-variant leading-tight">USER SATISFACTION MEASURED BY FRICTIONLESS INTERACTION.</p>
+</div>
+<div class="p-margin flex flex-col gap-4">
+<span class="font-label-xs text-label-xs text-primary uppercase">Commit Velocity</span>
+<span class="font-stat-number text-stat-number text-on-surface">42x</span>
+<p class="font-label-xs text-[9px] text-on-surface-variant leading-tight">ENGINEERING EFFICIENCY BOOSTED BY LLM ORCHESTRATION.</p>
+</div>
+</div>
+</section>
+<!-- Bento Case Studies -->
+<section class="p-margin bg-background">
+<div class="flex justify-between items-end mb-12">
+<div class="flex flex-col gap-2">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-xs text-label-xs rounded-full w-fit">( 02 ) SELECTED_WORKS</span>
+<h2 class="font-headline-lg text-headline-lg uppercase">Recent Deployments</h2>
+</div>
+<a class="font-label-xs text-label-xs text-primary hover:underline transition-all mb-2" href="#">VIEW ALL ARCHIVE →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Big Card -->
+<div class="md:col-span-2 group relative border border-outline-variant overflow-hidden bg-surface-container-low aspect-video md:aspect-auto">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A high-tech control center with multiple glowing blue screens showing complex data visualizations and network architectures. The lighting is low and moody, characteristic of a dark cyberpunk aesthetic. Large digital interfaces fill the frame with sharp geometric patterns and technical schematics, suggesting a sophisticated product management system in a futuristic tech-noir setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRIrmwdcPywlp8LC09zea-lYbNYfsmaF5MuLX7KQYKP4pt2nVM6mEwVZpdaU79oKThJj6xzQvs39HTqKHC8GIVumJHLPnytIrZveY1nyDsfUoMYYeLKdmEe6qknuhZABjdQ7sKDFn9lUj51M9zRqU0Nw0zzNAqQbOUl7-3Jb7F9Wzdu5T6IFcqadU5mMMoEfTzpLqKNHuuxLNvNspFMR6Nfbwj90NozS68nKbd3QXzZF0Ff0HiaZZGneJm8er5GsxwjcQf3nS-nb8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="font-label-xs text-label-xs text-primary-container font-bold mb-2 block">PROJECT_AETHER</span>
+<h3 class="font-headline-sm text-headline-sm">Decentralized Supply Logic</h3>
+</div>
+<div class="w-12 h-12 border border-white flex items-center justify-center group-hover:bg-primary-container group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-white">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Small Vertical -->
+<div class="group relative border border-outline-variant bg-surface-container-low min-h-[400px]">
+<div class="p-8 h-full flex flex-col justify-between">
+<div>
+<span class="font-label-xs text-label-xs text-primary mb-4 block">PRODUCT_002</span>
+<h3 class="font-headline-sm text-headline-sm uppercase leading-tight">Neural<br/>Priority<br/>Engine</h3>
+</div>
+<div class="relative w-full aspect-square diagonal-hatch border border-outline-variant mt-8 flex items-center justify-center">
+<div class="w-1/2 h-1/2 border-2 border-primary-container flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="font-label-xs text-on-surface">VIBE_02</span>
+</div>
+</div>
+<p class="font-body-md text-label-xs text-on-surface-variant mt-4">AI-driven ticket prioritization with 94% accuracy in impact prediction.</p>
+</div>
+</div>
+<!-- Bottom Row Cards -->
+<div class="group border border-outline-variant bg-surface-container-high p-8 flex flex-col justify-between hover:bg-primary-container transition-colors duration-300">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-on-primary-fixed transition-colors">Quantum<br/>Dashboard</h3>
+<div class="flex justify-between items-end">
+<span class="font-label-xs text-label-xs text-on-surface-variant group-hover:text-on-primary-fixed-variant uppercase">SaaS / Enterprise</span>
+<span class="material-symbols-outlined group-hover:text-on-primary-fixed">link</span>
+</div>
+</div>
+<div class="group border border-outline-variant bg-surface-container-high p-8 flex flex-col justify-between hover:bg-primary-container transition-colors duration-300">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-on-primary-fixed transition-colors">Ghost<br/>Infrastructure</h3>
+<div class="flex justify-between items-end">
+<span class="font-label-xs text-label-xs text-on-surface-variant group-hover:text-on-primary-fixed-variant uppercase">Infrastructure</span>
+<span class="material-symbols-outlined group-hover:text-on-primary-fixed">link</span>
+</div>
+</div>
+<div class="group border border-outline-variant bg-surface-container-high p-8 flex flex-col justify-between hover:bg-primary-container transition-colors duration-300">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-on-primary-fixed transition-colors">Helix<br/>Protocol</h3>
+<div class="flex justify-between items-end">
+<span class="font-label-xs text-label-xs text-on-surface-variant group-hover:text-on-primary-fixed-variant uppercase">Protocol / Web3</span>
+<span class="material-symbols-outlined group-hover:text-on-primary-fixed">link</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-margin text-center bg-surface relative overflow-hidden">
+<div class="absolute inset-0 diagonal-hatch opacity-5"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="font-label-xs text-label-xs text-primary uppercase block mb-6">/ ESTABLISH_CONTACT</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-headline-lg uppercase mb-12">Let's build the future, faster.</h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="px-10 py-4 bg-primary-container text-on-primary-container font-label-xs text-label-xs uppercase tracking-widest border border-primary-container hover:bg-transparent hover:text-primary-container transition-all">
+          INITIATE_SESSION
+        </button>
+<button class="px-10 py-4 border border-outline text-on-surface font-label-xs text-label-xs uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all">
+          DOWNLOAD_SCHEMATICS (CV)
+        </button>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-base border-t border-outline-variant bg-surface-container-lowest dark:bg-surface-container-lowest py-12">
+<div class="flex flex-col gap-2 items-center md:items-start mb-8 md:mb-0">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface uppercase">VIBE_CODING</div>
+<p class="font-label-xs text-label-xs tracking-tighter opacity-60">©2024 VIBE_CODING_STRUCTURE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">GITHUB</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">READ_CV</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">LINKEDIN</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">INSTAGRAM</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIBE_PM_SYSTEMS | WRITING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800;900&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#004b70",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-dim": "#131313",
+                    "on-surface": "#e2e2e2",
+                    "on-surface-variant": "#e3bfb3",
+                    "tertiary": "#8dcdff",
+                    "primary": "#ffb59c",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary": "#00344f",
+                    "surface-container-low": "#1b1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#390c00",
+                    "secondary": "#c6c6c7",
+                    "outline": "#aa897f",
+                    "surface-container-highest": "#353535",
+                    "on-secondary": "#2f3131",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed": "#001e30",
+                    "tertiary-container": "#009de4",
+                    "secondary-fixed": "#e2e2e2",
+                    "background": "#131313",
+                    "surface-bright": "#393939",
+                    "outline-variant": "#5b4138",
+                    "primary-fixed": "#ffdbcf",
+                    "tertiary-fixed-dim": "#8dcdff",
+                    "on-background": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-error": "#690005",
+                    "primary-container": "#ff5f1f",
+                    "surface": "#131313",
+                    "on-primary-fixed-variant": "#832700",
+                    "inverse-on-surface": "#303030",
+                    "surface-tint": "#ffb59c",
+                    "surface-variant": "#353535",
+                    "tertiary-fixed": "#cae6ff",
+                    "surface-container": "#1f1f1f",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary-container": "#00304a",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-container": "#561700",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#ab3600",
+                    "on-primary": "#5c1900",
+                    "secondary-container": "#454747",
+                    "primary-fixed-dim": "#ffb59c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "panel-split": "50vw",
+                    "margin": "48px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "stat-number": ["Hanken Grotesk"],
+                    "label-xs": ["JetBrains Mono"],
+                    "display-xl-mobile": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "stat-number": ["64px", {"lineHeight": "64px", "fontWeight": "900"}],
+                    "label-xs": ["10px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-sm": ["24px", {"lineHeight": "28px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .diagonal-hatch {
+        background-image: repeating-linear-gradient(45deg, #333333 0, #333333 1px, transparent 0, transparent 50%);
+        background-size: 10px 10px;
+      }
+      .bg-gradient-tech {
+        background: radial-gradient(circle at 50% 50%, #0a1f1a 0%, #131313 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container antialiased">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-margin py-4 fixed top-0 z-50 bg-background/80 backdrop-blur-sm dark:bg-background/80 border-b border-outline-variant">
+<div class="font-display-xl text-headline-sm font-black text-on-surface dark:text-on-surface">VIBE_PM_SYSTEMS</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">WORK</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">ARCHIVE</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">MANIFESTO</a>
+<a class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">CONTACT</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label-xs text-label-xs uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300 transform active:scale-95">HIRE(0)</button>
+</nav>
+</header>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section: Editorial Split -->
+<section class="grid grid-cols-1 md:grid-cols-2 min-h-screen border-b border-outline-variant">
+<!-- Left Panel: Fixed Content (Atmospheric) -->
+<div class="relative bg-gradient-tech overflow-hidden flex flex-col justify-end p-margin border-r border-outline-variant">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<span class="absolute -top-10 -left-20 font-display-xl text-[300px] leading-none opacity-10 select-none">VIBE</span>
+</div>
+<div class="z-10">
+<div class="bg-primary-container text-on-primary-container inline-block px-3 py-1 mb-8 font-label-xs text-label-xs">( 01 )</div>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl mb-12">THINKING<br/>LANE.</h1>
+<p class="font-label-xs text-label-xs uppercase tracking-widest text-outline max-w-xs">A serialized exploration of systems design, neural architecture, and product intuition.</p>
+</div>
+<!-- Geometric Accent -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-outline/30 rotate-45 pointer-events-none">
+<div class="w-full h-full border border-primary/20 rotate-12"></div>
+</div>
+</div>
+<!-- Right Panel: Scrollable Lane -->
+<div class="flex flex-col">
+<!-- Header Spacer for Mobile -->
+<div class="p-margin border-b border-outline-variant bg-surface-container-lowest">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">Product Thinking</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Structural integrity in digital craftsmanship.</p>
+</div>
+<!-- Article Card 1 -->
+<article class="p-margin border-b border-outline-variant group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-xs text-label-xs text-primary">DEC 2023</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">The Vibe-Coding Manifesto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">Defining the transition from manual logic to intent-based architectural sculpting. Why the future of PM is technical vibes.</p>
+<div class="w-full aspect-video diagonal-hatch border border-outline-variant flex items-center justify-center overflow-hidden">
+<div class="w-24 h-24 rounded-full border-2 border-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">change_history</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="p-margin border-b border-outline-variant group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-xs text-label-xs text-primary">NOV 2023</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Judgment as a Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">In an era of zero marginal cost production, the only defensible moat is human taste. Analyzing the economy of selection.</p>
+</article>
+</div>
+</section>
+<!-- Second lane: AI Observations -->
+<section class="grid grid-cols-1 md:grid-cols-2 min-h-screen border-b border-outline-variant">
+<!-- Left Lane: Content -->
+<div class="flex flex-col order-2 md:order-1">
+<div class="p-margin border-b border-outline-variant bg-surface-container-lowest">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">AI Era Observations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Mapping the post-compute landscape.</p>
+</div>
+<!-- Article Card 3 -->
+<article class="p-margin border-b border-outline-variant group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-xs text-label-xs text-primary">OCT 2023</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Scale vs Meaning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">Why hyper-growth is failing the human scale. A data-driven look at the return of artisanal digital experiences.</p>
+<div class="grid grid-cols-2 gap-0 border border-outline-variant">
+<div class="p-6 border-r border-b border-outline-variant">
+<div class="font-stat-number text-stat-number text-primary">82%</div>
+<div class="font-label-xs text-label-xs text-outline uppercase mt-2">Efficiency Gain</div>
+</div>
+<div class="p-6 border-b border-outline-variant">
+<div class="font-stat-number text-stat-number text-secondary">04%</div>
+<div class="font-label-xs text-label-xs text-outline uppercase mt-2">Meaning Retention</div>
+</div>
+</div>
+</article>
+<!-- More Articles Link -->
+<div class="p-margin flex items-center justify-center">
+<button class="border border-on-surface px-12 py-4 font-label-xs text-label-xs uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all">
+                        LOAD_ALL_THOUGHTS
+                    </button>
+</div>
+</div>
+<!-- Right Lane: Fixed Visual -->
+<div class="relative bg-surface-container-lowest overflow-hidden flex flex-col justify-center p-margin border-l border-outline-variant order-1 md:order-2">
+<div class="absolute inset-0 z-0 diagonal-hatch opacity-10"></div>
+<div class="z-10">
+<div class="bg-primary-container text-on-primary-container inline-block px-3 py-1 mb-8 font-label-xs text-label-xs">( 02 )</div>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl mb-12">NEURAL<br/>SHIFT.</h1>
+<div class="max-w-sm">
+<div class="border-l-4 border-primary-container pl-6 py-2">
+<p class="font-body-md text-body-md italic text-on-surface">"The architect of the future does not draw lines; they define boundaries for intelligence to inhabit."</p>
+</div>
+</div>
+</div>
+<!-- Abstract Image Overlay -->
+<div class="mt-20 relative w-full aspect-square border border-outline-variant p-4">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="A macro close-up of a high-tech processor chip with glowing orange light trails tracing complex circuitry patterns. The image uses a deep dark-green and black background with sharp 1px grid lines overlaid, embodying a tech-noir editorial style with high contrast and futuristic precision. Soft cinematic lighting highlights the mechanical textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGwg1g4asyPXAaD2y76WqrZJ8f3QKc9ZqPMEF9TG5j9JePM-ZkcubPJqErht0jE_VOOm_pHdagP1Hbi4WnjNapFgt8W_iWa-PAaPwQDIZvExEipOuCu-YcYsc8KpVTMIstZYGS9hto7XABYrKw3LEn5XwjqSMoREsnO_-Zo65VkueYcqUy-fZ7wogU0LSl98cFBbELBn67AF8ubHRuqPgWXnc-i4-9Y4v4B185dOdiBIOh_6ZQDfrLNjc0aWC1LuTHimkFNdXYX40"/>
+<div class="absolute inset-0 bg-primary-container/10 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<!-- Technical Stats Grid -->
+<section class="border-b border-outline-variant">
+<div class="grid grid-cols-2 md:grid-cols-4">
+<div class="p-margin border-r border-outline-variant flex flex-col justify-between aspect-square">
+<span class="font-label-xs text-label-xs text-outline uppercase">( VOLUME )</span>
+<div>
+<div class="font-stat-number text-stat-number">42</div>
+<div class="font-label-xs text-label-xs uppercase mt-2">Essays Published</div>
+</div>
+</div>
+<div class="p-margin md:border-r border-outline-variant flex flex-col justify-between aspect-square">
+<span class="font-label-xs text-label-xs text-outline uppercase">( IMPACT )</span>
+<div>
+<div class="font-stat-number text-stat-number">12k</div>
+<div class="font-label-xs text-label-xs uppercase mt-2">Active Readers</div>
+</div>
+</div>
+<div class="p-margin border-r border-outline-variant flex flex-col justify-between aspect-square">
+<span class="font-label-xs text-label-xs text-outline uppercase">( FREQUENCY )</span>
+<div>
+<div class="font-stat-number text-stat-number">01</div>
+<div class="font-label-xs text-label-xs uppercase mt-2">Post Per Week</div>
+</div>
+</div>
+<div class="p-margin flex flex-col justify-between aspect-square">
+<span class="font-label-xs text-label-xs text-outline uppercase">( STATUS )</span>
+<div>
+<div class="font-stat-number text-stat-number text-primary-container">LIVE</div>
+<div class="font-label-xs text-label-xs uppercase mt-2">Connection Active</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subscribe Input -->
+<section class="p-margin py-32 flex flex-col items-center justify-center bg-surface-container-lowest">
+<div class="max-w-xl w-full">
+<span class="font-label-xs text-label-xs text-primary mb-4 block uppercase tracking-[0.2em] text-center">JOIN THE NETWORK</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center mb-12 uppercase">Receive the pulse.</h2>
+<div class="relative w-full">
+<input class="w-full bg-transparent border-b border-outline text-headline-sm py-4 focus:outline-none focus:border-primary-container transition-colors placeholder:text-surface-bright" placeholder="ENTER_EMAIL_ADDRESS" type="email"/>
+<button class="absolute right-0 bottom-4 font-label-xs text-label-xs text-primary hover:tracking-widest transition-all">
+                        SUBMIT -&gt;
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-base border-t border-outline-variant bg-surface-container-lowest">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">VIBE_CODING_STRUCTURE</div>
+<div class="flex gap-6 py-8 md:py-0">
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">GITHUB</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">READ_CV</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">LINKEDIN</a>
+<a class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant hover:text-primary transition-colors underline" href="#">INSTAGRAM</a>
+</div>
+<div class="font-label-xs text-label-xs tracking-tighter text-on-surface-variant">
+            ©2024 VIBE_CODING_STRUCTURE. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>
