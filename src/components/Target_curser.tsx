@@ -55,6 +55,17 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     const cursor = cursorRef.current;
     cornersRef.current = cursor.querySelectorAll<HTMLDivElement>('.target-cursor-corner');
 
+    const { cornerSize } = constants;
+    const idleCornerXY = [
+      { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },
+      { x: cornerSize * 0.5, y: -cornerSize * 1.5 },
+      { x: cornerSize * 0.5, y: cornerSize * 0.5 },
+      { x: -cornerSize * 1.5, y: cornerSize * 0.5 },
+    ];
+    Array.from(cornersRef.current).forEach((corner, i) => {
+      gsap.set(corner, { x: idleCornerXY[i].x, y: idleCornerXY[i].y });
+    });
+
     let activeTarget: Element | null = null;
     let currentLeaveHandler: (() => void) | null = null;
     let resumeTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -208,16 +219,13 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         if (cornersRef.current) {
           const corners = Array.from(cornersRef.current);
           gsap.killTweensOf(corners);
-          const { cornerSize } = constants;
-          const positions = [
-            { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },
-            { x: cornerSize * 0.5, y: -cornerSize * 1.5 },
-            { x: cornerSize * 0.5, y: cornerSize * 0.5 },
-            { x: -cornerSize * 1.5, y: cornerSize * 0.5 }
-          ];
           const tl = gsap.timeline();
           corners.forEach((corner, index) => {
-            tl.to(corner, { x: positions[index].x, y: positions[index].y, duration: 0.3, ease: 'power3.out' }, 0);
+            tl.to(
+              corner,
+              { x: idleCornerXY[index].x, y: idleCornerXY[index].y, duration: 0.3, ease: 'power3.out' },
+              0
+            );
           });
         }
         resumeTimeout = setTimeout(() => {

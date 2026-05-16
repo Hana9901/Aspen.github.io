@@ -2,6 +2,18 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      /* Avoid white flash before app CSS mounts */
+      html,
+      body {
+        margin: 0;
+        background: #131313;
+        color: #e2e2e2;
+      }
+      #root {
+        min-height: 100dvh;
+      }
+    </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VIBE_PM_SYSTEMS | Portfolio</title>

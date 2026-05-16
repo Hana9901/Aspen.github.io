@@ -1,24 +1,37 @@
 import { useEffect, useState } from 'react'
 
-const durationMs = 1600
+/** Visible overlay time before fade begins (ms) */
+const holdMs = 1100
+const fadeMs = 320
 
 export function CrtLoader() {
-  const [visible, setVisible] = useState(true)
+  const [phase, setPhase] = useState<'hold' | 'fade' | 'done'>('hold')
 
   useEffect(() => {
-    const id = window.setTimeout(() => setVisible(false), durationMs)
-    return () => window.clearTimeout(id)
+    const t1 = window.setTimeout(() => setPhase('fade'), holdMs)
+    const t2 = window.setTimeout(() => setPhase('done'), holdMs + fadeMs)
+    return () => {
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+    }
   }, [])
 
-  if (!visible) return null
+  if (phase === 'done') return null
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-black text-on-surface"
-      style={{ animation: 'crt-flicker 0.08s steps(2) infinite' }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black text-on-surface ease-out transition-opacity"
+      style={{
+        opacity: phase === 'fade' ? 0 : 1,
+        transitionDuration: `${fadeMs}ms`,
+        pointerEvents: 'none',
+      }}
       role="presentation"
     >
-      <div className="crt-scanlines absolute inset-0 opacity-70" />
+      <div
+        className="crt-scanlines pointer-events-none absolute inset-0 opacity-70"
+        style={{ animation: 'crt-flicker 0.08s steps(2) infinite' }}
+      />
       <div className="relative flex h-[min(70vh,520px)] w-[min(92vw,720px)] flex-col border-2 border-primary-container bg-[#0a0a0a] px-8 py-10 shadow-[0_0_0_1px_rgba(0,0,0,0.6)]">
         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary">
           TUNER // VHF-UHF

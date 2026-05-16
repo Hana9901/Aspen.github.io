@@ -13,7 +13,7 @@ export function SiteLayout() {
       <CrtLoader />
       <TopNav />
       <main className="pt-20">
-        <div key={pathname} style={{ animation: 'fade-in 0.35s ease-out' }}>
+        <div key={pathname}>
           <Outlet />
         </div>
       </main>
